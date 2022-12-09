@@ -66,66 +66,55 @@ const Skill = () => {
   };
 
   return (
-    <Card className={style.center}>
-      <Row gutter={16}>
-        <Col>
-          <Space direction="vertical" size="middle" style={{ display: "flex" }}>
-            <div>
-              <Divider orientation="left">
-                <BranchesOutlined /> Experience
-              </Divider>
-            </div>
-            <div style={{padding:15}}>
-              <Timeline>
-                <Timeline.Item>
-                  Internship at Nerasuan University. (01/2021- 03/2021)
-                </Timeline.Item>
-                <Timeline.Item>
-                  Internship at Posible Automation Company. (04/2021- 06/2021)
-                </Timeline.Item>
-                <Timeline.Item>
-                  Programmer at Cimsystem Company. (07/2021- Now)
-                </Timeline.Item>
-              </Timeline>
-            </div>
-            <div>
-              <Divider orientation="left">
-                <BookOutlined /> Skills
-              </Divider>
-            </div>
-            <div style={{padding:10}}>
-              <Segmented
-                options={["Fornt End", "Back End", "Fullstack", "AI", "Mobile"]}
-              />
+    <Card>
+      <Space direction="vertical" size="middle" style={{ display: "flex" }}>
+        <Divider orientation="left">
+          <BranchesOutlined /> Experience
+        </Divider>
+        <div className={style.center}>
+          <Timeline>
+            <Timeline.Item>
+              Internship at Nerasuan University. (01/2021- 03/2021)
+            </Timeline.Item>
+            <Timeline.Item>
+              Internship at Posible Automation Company. (04/2021- 06/2021)
+            </Timeline.Item>
+            <Timeline.Item>
+              Programmer at Cimsystem Company. (07/2021- Now)
+            </Timeline.Item>
+          </Timeline>
+        </div>
 
-            </div>
-            <div style={{padding:10}}>
-                <List>
-                  <VirtualList
-                    data={data}
-                    height={350}
-                    itemHeight={47}
-                    itemKey="email"
-                    onScroll={onScroll}
-                  >
-                    {(item: UserItem) => (
-                      <List.Item key={item.email}>
-                        <List.Item.Meta
-                          avatar={<Avatar src={item.picture.large} />}
-                          title={
-                            <a href="https://ant.design">{item.name.last}</a>
-                          }
-                          description={item.email}
-                        />
-                        <div>Content</div>
-                      </List.Item>
-                    )}
-                  </VirtualList>
-                </List>
-              </div>
-          </Space>
-        </Col>
-      </Row>
+        <Divider orientation="left">
+          <BookOutlined /> Skills
+        </Divider>
+        <div className={style.center}>
+          <Segmented
+            options={["Fornt End", "Back End", "Fullstack", "AI", "Mobile"]}
+          />
+        </div>
+
+        <List>
+          <VirtualList
+            data={data}
+            height={350}
+            itemHeight={47}
+            itemKey="email"
+            onScroll={onScroll}
+          >
+            {(item: UserItem) => (
+              <List.Item key={item.email}>
+                <List.Item.Meta
+                  avatar={<Avatar src={item.picture.large} />}
+                  title={<a href="https://ant.design">{item.name.last}</a>}
+                  description={item.email}
+                />
+                <div>Content</div>
+              </List.Item>
+            )}
+          </VirtualList>
+        </List>
+      </Space>
     </Card>
   );
 };

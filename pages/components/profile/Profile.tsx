@@ -28,7 +28,7 @@ const Profile = () => {
         <Divider>
           <InfoCircleOutlined /> About
         </Divider>
-        <Text strong>Contract</Text>
+        <Text strong>Contact</Text>
         <div>
           <Text type="secondary">
             <MailOutlined /> jakkrits.cpe@gmail.com
