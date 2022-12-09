@@ -11,6 +11,7 @@ import {
   Segmented,
   Row,
   Col,
+  Space,
 } from "antd";
 import VirtualList from "rc-virtual-list";
 
@@ -60,53 +61,66 @@ const Skill = () => {
   };
 
   return (
-    <Card style={{ minHeight:"100vh" }}>
+    <Card style={{ minHeight: "100vh", padding: "0rem 0px 0px 0rem" }}>
       <Row gutter={16}>
-        <Col span={9}>
-          {" "}
-          <Divider orientation="left">
-            <BookOutlined /> Skills
-          </Divider>
-          <Segmented
-            style={{ margin: "0px 0px 20px 25px" }}
-            options={["Fornt End", "Back End", "Fullstack"]}
-          />
-          <List>
-            <VirtualList
-              data={data}
-              height={ContainerHeight}
-              itemHeight={47}
-              itemKey="email"
-              onScroll={onScroll}
-            >
-              {(item: UserItem) => (
-                <List.Item key={item.email}>
-                  <List.Item.Meta
-                    avatar={<Avatar src={item.picture.large} />}
-                    title={<a href="https://ant.design">{item.name.last}</a>}
-                    description={item.email}
-                  />
-                  <div>Content</div>
-                </List.Item>
-              )}
-            </VirtualList>
-          </List>
-          <Divider orientation="left" style={{ margin: "50px 0px 0px 0px" }}>
-            <BranchesOutlined /> Experience
-          </Divider>
-          <Timeline style={{ margin: "50px 10px 10px 50px" }}>
-            <Timeline.Item>
-              Internship at Nerasuan University. (01/2021- 03/2021)
-            </Timeline.Item>
-            <Timeline.Item>
-              Internship at Posible Automation Company. (04/2021- 06/2021)
-            </Timeline.Item>
-            <Timeline.Item>
-              Programmer at Cimsystem Company. (07/2021- Now)
-            </Timeline.Item>
-          </Timeline>
+        <Col>
+          <Space direction="vertical" size="middle">
+            <Divider orientation="left">
+              <BranchesOutlined /> Experience
+            </Divider>
+            <div style={{ padding: "3.8rem" }}>
+              <Timeline>
+                <Timeline.Item>
+                  Internship at Nerasuan University. (01/2021- 03/2021)
+                </Timeline.Item>
+                <Timeline.Item>
+                  Internship at Posible Automation Company. (04/2021- 06/2021)
+                </Timeline.Item>
+                <Timeline.Item>
+                  Programmer at Cimsystem Company. (07/2021- Now)
+                </Timeline.Item>
+              </Timeline>
+            </div>
+            <div>
+              <Divider orientation="left">
+                <BookOutlined /> Skills
+              </Divider>
+              <div style={{ padding: "2.5rem" }}>
+                <Segmented style={{ margin: "0 0 2rem 0" }}
+                  options={[
+                    "Fornt End",
+                    "Back End",
+                    "Fullstack",
+                    "AI",
+                    "Mobile",
+                  ]}
+                />
+                <List>
+                  <VirtualList
+                    data={data}
+                    height={350}
+                    itemHeight={47}
+                    itemKey="email"
+                    onScroll={onScroll}
+                  >
+                    {(item: UserItem) => (
+                      <List.Item key={item.email}>
+                        <List.Item.Meta
+                          avatar={<Avatar src={item.picture.large} />}
+                          title={
+                            <a href="https://ant.design">{item.name.last}</a>
+                          }
+                          description={item.email}
+                        />
+                        <div>Content</div>
+                      </List.Item>
+                    )}
+                  </VirtualList>
+                </List>
+              </div>
+            </div>
+          </Space>
         </Col>
-        <Col span={9}></Col>
       </Row>
     </Card>
   );
