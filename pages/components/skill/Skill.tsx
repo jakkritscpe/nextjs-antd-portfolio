@@ -87,13 +87,10 @@ const Skill = () => {
         </div>
 
         <Divider orientation="left">
-          <BookOutlined /> Skills{" "}
-        </Divider>
-
-        <div className={style.right}>
+          <BookOutlined /> Skills
           <Select
             defaultValue="All"
-            style={{ width: 120 }}
+            style={{ width: 120 , margin: "0 0 0 20px" }}
             options={[
               {
                 value: "All",
@@ -117,7 +114,7 @@ const Skill = () => {
               },
             ]}
           />
-        </div>
+        </Divider>
 
         <List>
           <VirtualList
