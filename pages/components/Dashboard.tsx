@@ -19,7 +19,6 @@ import {
 } from "antd";
 import Profile from "./profile/Profile";
 import Skill from "./skill/Skill";
-import Article from "./article/Article";
 
 const { Header, Sider, Content } = Layout;
 
