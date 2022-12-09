@@ -90,8 +90,10 @@ const Skill = () => {
           <BookOutlined /> Skills{" "}
         </Divider>
 
-        <div className={style.center}>
-          <Select
+        {/* <div className={style.center}>
+
+        </div> */}
+        <Select
             defaultValue="All"
             style={{ width: 120 }}
             options={[
@@ -117,8 +119,6 @@ const Skill = () => {
               },
             ]}
           />
-        </div>
-
         <List>
           <VirtualList
             data={data}
