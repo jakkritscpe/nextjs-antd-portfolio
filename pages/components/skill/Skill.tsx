@@ -11,6 +11,7 @@ import {
   Segmented,
   Row,
   Col,
+  Select,
   Space,
   Grid,
 } from "antd";
@@ -86,11 +87,35 @@ const Skill = () => {
         </div>
 
         <Divider orientation="left">
-          <BookOutlined /> Skills
+          <BookOutlined /> Skills{" "}
         </Divider>
+
         <div className={style.center}>
-          <Segmented
-            options={["Fornt End", "Back End", "Fullstack", "AI", "Mobile"]}
+          <Select
+            defaultValue="All"
+            style={{ width: 120 }}
+            options={[
+              {
+                value: "All",
+                label: "All",
+              },
+              {
+                value: "Front End",
+                label: "Front End",
+              },
+              {
+                value: "Back End",
+                label: "Back End",
+              },
+              {
+                value: "Full stack",
+                label: "Full stack",
+              },
+              {
+                value: "AI",
+                label: "AI",
+              },
+            ]}
           />
         </div>
 
