@@ -66,16 +66,16 @@ const Skill = () => {
   };
 
   return (
-    <Card className={ style.center }>
+    <Card className={style.center}>
       <Row gutter={16}>
-        <Col >
-          <Space direction="vertical" size="middle" style={{ display: "flex" }} >
+        <Col>
+          <Space direction="vertical" size="middle" style={{ display: "flex" }}>
             <div>
               <Divider orientation="left">
                 <BranchesOutlined /> Experience
               </Divider>
             </div>
-            <div>
+            <div style={{padding:15}}>
               <Timeline>
                 <Timeline.Item>
                   Internship at Nerasuan University. (01/2021- 03/2021)
@@ -93,33 +93,36 @@ const Skill = () => {
                 <BookOutlined /> Skills
               </Divider>
             </div>
-            <div>
+            <div style={{padding:10}}>
               <Segmented
                 options={["Fornt End", "Back End", "Fullstack", "AI", "Mobile"]}
               />
-              <List>
-                <VirtualList
-                  data={data}
-                  height={350}
-                  itemHeight={47}
-                  itemKey="email"
-                  onScroll={onScroll}
-                >
-                  {(item: UserItem) => (
-                    <List.Item key={item.email}>
-                      <List.Item.Meta
-                        avatar={<Avatar src={item.picture.large} />}
-                        title={
-                          <a href="https://ant.design">{item.name.last}</a>
-                        }
-                        description={item.email}
-                      />
-                      <div>Content</div>
-                    </List.Item>
-                  )}
-                </VirtualList>
-              </List>
+
             </div>
+            <div style={{padding:10}}>
+                <List>
+                  <VirtualList
+                    data={data}
+                    height={350}
+                    itemHeight={47}
+                    itemKey="email"
+                    onScroll={onScroll}
+                  >
+                    {(item: UserItem) => (
+                      <List.Item key={item.email}>
+                        <List.Item.Meta
+                          avatar={<Avatar src={item.picture.large} />}
+                          title={
+                            <a href="https://ant.design">{item.name.last}</a>
+                          }
+                          description={item.email}
+                        />
+                        <div>Content</div>
+                      </List.Item>
+                    )}
+                  </VirtualList>
+                </List>
+              </div>
           </Space>
         </Col>
       </Row>
