@@ -125,10 +125,14 @@ const Dashboard: React.FC = () => {
           }}
         >
           <Row gutter={10}>
-            <Col span={6}>
+            {/* <Col span={6}>
               <Profile />
             </Col>
             <Col span={18}>
+              <Skill />
+            </Col> */}
+            <Col>
+              <Profile />
               <Skill />
             </Col>
           </Row>
