@@ -133,7 +133,6 @@ const Dashboard: React.FC = () => {
             </Col> */}
             <Col>
               <Profile />
-              <Skill />
             </Col>
           </Row>
         </Content>
