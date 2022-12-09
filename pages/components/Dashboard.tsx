@@ -101,7 +101,7 @@ const Dashboard: React.FC = () => {
       <Layout className="site-layout">
         <Header style={{ padding: 0, background: colorBgContainer }}>
           <div className={style.left}>
-            <div className={style.typing}>I'm Software Engineer.</div>
+            <div className={style.typing}>I am Software Engineer.</div>
             <ConfigProvider
               theme={{
                 token: {
