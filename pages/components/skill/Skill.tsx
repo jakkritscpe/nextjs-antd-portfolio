@@ -12,8 +12,10 @@ import {
   Row,
   Col,
   Space,
+  Grid,
 } from "antd";
 import VirtualList from "rc-virtual-list";
+import style from "./style/skill.module.css";
 
 interface UserItem {
   email: string;
@@ -31,11 +33,14 @@ interface UserItem {
   };
 }
 
+const { useBreakpoint } = Grid;
+
 const fakeDataUrl =
   "https://randomuser.me/api/?results=20&inc=name,gender,email,nat,picture&noinfo";
 const ContainerHeight = 400;
 
 const Skill = () => {
+  const screens = useBreakpoint();
   const [data, setData] = useState<UserItem[]>([]);
 
   const appendData = () => {
@@ -61,14 +66,16 @@ const Skill = () => {
   };
 
   return (
-    <Card style={{ minHeight: "100vh", padding: "0rem 0px 0px 0rem" }}>
+    <Card className={ style.center }>
       <Row gutter={16}>
-        <Col>
-          <Space direction="vertical" size="middle">
-            <Divider orientation="left">
-              <BranchesOutlined /> Experience
-            </Divider>
-            <div style={{ padding: "3.8rem" }}>
+        <Col >
+          <Space direction="vertical" size="small" >
+            <div>
+              <Divider orientation="left">
+                <BranchesOutlined /> Experience
+              </Divider>
+            </div>
+            <div>
               <Timeline>
                 <Timeline.Item>
                   Internship at Nerasuan University. (01/2021- 03/2021)
@@ -85,39 +92,33 @@ const Skill = () => {
               <Divider orientation="left">
                 <BookOutlined /> Skills
               </Divider>
-              <div style={{ padding: "2.5rem" }}>
-                <Segmented style={{ margin: "0 0 2rem 0" }}
-                  options={[
-                    "Fornt End",
-                    "Back End",
-                    "Fullstack",
-                    "AI",
-                    "Mobile",
-                  ]}
-                />
-                <List>
-                  <VirtualList
-                    data={data}
-                    height={350}
-                    itemHeight={47}
-                    itemKey="email"
-                    onScroll={onScroll}
-                  >
-                    {(item: UserItem) => (
-                      <List.Item key={item.email}>
-                        <List.Item.Meta
-                          avatar={<Avatar src={item.picture.large} />}
-                          title={
-                            <a href="https://ant.design">{item.name.last}</a>
-                          }
-                          description={item.email}
-                        />
-                        <div>Content</div>
-                      </List.Item>
-                    )}
-                  </VirtualList>
-                </List>
-              </div>
+            </div>
+            <div>
+              <Segmented
+                options={["Fornt End", "Back End", "Fullstack", "AI", "Mobile"]}
+              />
+              <List>
+                <VirtualList
+                  data={data}
+                  height={350}
+                  itemHeight={47}
+                  itemKey="email"
+                  onScroll={onScroll}
+                >
+                  {(item: UserItem) => (
+                    <List.Item key={item.email}>
+                      <List.Item.Meta
+                        avatar={<Avatar src={item.picture.large} />}
+                        title={
+                          <a href="https://ant.design">{item.name.last}</a>
+                        }
+                        description={item.email}
+                      />
+                      <div>Content</div>
+                    </List.Item>
+                  )}
+                </VirtualList>
+              </List>
             </div>
           </Space>
         </Col>

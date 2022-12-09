@@ -44,6 +44,14 @@ const Dashboard: React.FC = () => {
     checked ? setCheckSwith(true) : setCheckSwith(false);
   };
 
+  const onChangResponsive = () => {
+    if (screens.xl) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
   return (
     <>
       {/* {console.log(screens)} */}
@@ -53,6 +61,7 @@ const Dashboard: React.FC = () => {
           trigger={null}
           collapsible
           collapsed={collapsed}
+          hidden={onChangResponsive()}
         >
           <div className={style.center}>
             <Avatar
@@ -111,6 +120,16 @@ const Dashboard: React.FC = () => {
         <Layout className="site-layout">
           <Header style={{ padding: 0, background: colorBgContainer }}>
             <div className={style.left}>
+              <div className={style.center}  hidden={!onChangResponsive()}>
+                <Avatar
+                  style={{
+                    margin: 12,
+                  }}
+                  size={sizeAvatar}
+                  src="https://sv1.picz.in.th/images/2022/12/08/GHFoKu.png"
+                  icon={<UserOutlined />}
+                />
+              </div>
               <div className={style.typing}>I am Software Engineer.</div>
               <ConfigProvider
                 theme={{
@@ -135,7 +154,7 @@ const Dashboard: React.FC = () => {
               minHeight: "100vh",
             }}
           >
-            <Row gutter={10} hidden={screens.xl ? false : true}>
+            <Row gutter={10} hidden={onChangResponsive()}>
               <Col span={6}>
                 <Space
                   direction="vertical"
@@ -149,8 +168,8 @@ const Dashboard: React.FC = () => {
                 <Skill />
               </Col>
             </Row>
-            <Row gutter={10} hidden={screens.xl ? true : false}>
-              <Col >
+            <Row gutter={10} hidden={!onChangResponsive()}>
+              <Col>
                 <Space
                   direction="vertical"
                   size="middle"

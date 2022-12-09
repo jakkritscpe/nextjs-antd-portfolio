@@ -15,7 +15,7 @@ const { Text } = Typography;
 
 const Profile = () => {
   return (
-    <Card style={{minHeight:"100vh"}}
+    <Card 
       cover={
         <img
           alt="profile"
