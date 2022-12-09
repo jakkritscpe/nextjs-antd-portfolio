@@ -69,7 +69,7 @@ const Skill = () => {
     <Card className={ style.center }>
       <Row gutter={16}>
         <Col >
-          <Space direction="vertical" size="small" >
+          <Space direction="vertical" size="middle" style={{ display: "flex" }} >
             <div>
               <Divider orientation="left">
                 <BranchesOutlined /> Experience
