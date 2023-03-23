@@ -54,7 +54,6 @@ const Dashboard: React.FC = () => {
 
   return (
     <>
-      {/* {console.log(screens)} */}
       <Layout>
         <Sider
           theme={checkSwith ? "dark" : "light"}
@@ -120,7 +119,7 @@ const Dashboard: React.FC = () => {
         <Layout className="site-layout">
           <Header style={{ padding: 0, background: colorBgContainer }}>
             <div className={style.left}>
-              <div className={style.center}  hidden={!onChangResponsive()}>
+              <div className={style.center} hidden={!onChangResponsive()}>
                 <Avatar
                   style={{
                     margin: 12,
@@ -154,30 +153,15 @@ const Dashboard: React.FC = () => {
               minHeight: "100vh",
             }}
           >
-            <Row gutter={10} hidden={onChangResponsive()}>
-              <Col span={6}>
-                <Space
-                  direction="vertical"
-                  size="middle"
-                  style={{ display: "flex" }}
-                >
-                  <Profile />
-                </Space>
+            <Row>
+              <Col xl={6} md={12} sm={24} xs={24}>
+                <Profile />
               </Col>
-              <Col span={8}>
-                <Skill />
+              <Col xl={8} md={12} sm={24} xs={24}>
+                {/* <Skill /> */}
               </Col>
-            </Row>
-            <Row gutter={10} hidden={!onChangResponsive()}>
-              <Col>
-                <Space
-                  direction="vertical"
-                  size="middle"
-                  style={{ display: "flex" }}
-                >
-                  <Profile />
-                  <Skill />
-                </Space>
+              <Col xl={8} md={12} sm={24} xs={24}>
+                {/* <Skill /> */}
               </Col>
             </Row>
           </Content>
