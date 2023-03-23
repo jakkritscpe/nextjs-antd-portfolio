@@ -3,7 +3,6 @@ import {
   SettingOutlined,
   InfoCircleOutlined,
   GithubOutlined,
-  FacebookFilled,
   MailOutlined,
   DownloadOutlined,
 } from "@ant-design/icons";
@@ -15,7 +14,7 @@ const { Text } = Typography;
 
 const Profile = () => {
   return (
-    <Card 
+    <Card
       cover={
         <img
           alt="profile"
@@ -29,21 +28,12 @@ const Profile = () => {
           <InfoCircleOutlined /> About
         </Divider>
         <Text strong>Contact</Text>
-        <div>
-          <Text type="secondary">
-            <MailOutlined /> jakkrits.cpe@gmail.com
-          </Text>
-        </div>
-        <div>
-          <Text type="secondary">
-            <FacebookFilled /> www.facebook.com
-          </Text>
-        </div>
-        <div>
-          <Text type="secondary">
-            <GithubOutlined /> www.github.com
-          </Text>
-        </div>
+        <a>
+          <MailOutlined /> jakkrits.cpe@gmail.com
+        </a>
+        <a href="https://github.com/jakkritscpe">
+          <GithubOutlined /> www.github.com
+        </a>
         <Text strong>Education</Text>
         <div>
           <Text type="secondary">
@@ -51,9 +41,11 @@ const Profile = () => {
             Computer Engineering (2016-2020)
           </Text>
         </div>
-        <Button block>
-          <DownloadOutlined /> Download Resume
-        </Button>
+        <a href="/files/cv.pdf" target="_blank" rel="noopener noreferrer">
+          <Button block>
+            <DownloadOutlined /> Download Resume
+          </Button>
+        </a>
       </Space>
     </Card>
   );
