@@ -1,0 +1,11 @@
+
+
+  .box:hover {
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #e6fffb;
+    /* box-shadow: 0px 0px 5px #08FFC866; */
+    color: #08979c;
+    transform: translateY(-7px);
+    border: 1px solid #87e8de;
+  }

@@ -20,7 +20,7 @@ import {
   Grid,
 } from "antd";
 import Profile from "./profile/Profile";
-import Skill from "./skill/Skill";
+import Tools from "./tools/Tools";
 
 const { Header, Sider, Content } = Layout;
 const { useBreakpoint } = Grid;
@@ -150,18 +150,18 @@ const Dashboard: React.FC = () => {
             style={{
               margin: "16px",
               padding: 0,
-              minHeight: "100vh",
+              minHeight: "90vh",
             }}
           >
-            <Row>
+            <Row gutter={[16, 16]}>
               <Col xl={6} md={12} sm={24} xs={24}>
                 <Profile />
               </Col>
-              <Col xl={8} md={12} sm={24} xs={24}>
-                {/* <Skill /> */}
+              <Col xl={9} md={12} sm={24} xs={24}>
+                <Tools />
               </Col>
               <Col xl={8} md={12} sm={24} xs={24}>
-                {/* <Skill /> */}
+
               </Col>
             </Row>
           </Content>
