@@ -98,6 +98,7 @@ const Tools: React.FC = () => (
               align="center"
               style={{ width: "100px" }}
               className={style.box}
+              key={tool.name}
             >
               <Avatar
                 shape="square"
