@@ -75,13 +75,13 @@ const MainLayout = ({ children }: any) => {
                 {
                   key: "1",
                   icon: <UserOutlined />,
-                  label: <Link href="http://localhost:3000">Profile</Link>,
+                  label: <Link href="/">Profile</Link>,
                 },
                 {
                   key: "2",
                   icon: <AuditOutlined />,
                   label: (
-                    <Link href="http://localhost:3000/certificate">
+                    <Link href="/certificate">
                       Certificate
                     </Link>
                   ),
@@ -90,7 +90,7 @@ const MainLayout = ({ children }: any) => {
                   key: "3",
                   icon: <SettingOutlined />,
                   label: (
-                    <Link href="http://localhost:3000/setting">Setting</Link>
+                    <Link href="/setting">Setting</Link>
                   ),
                 },
               ]}
