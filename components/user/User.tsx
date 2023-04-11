@@ -12,7 +12,7 @@ import { Divider, Card, Button, Typography, Space } from "antd";
 const { Meta } = Card;
 const { Text } = Typography;
 
-const Profile = () => {
+const User = () => {
   return (
     <Card
       cover={
@@ -51,4 +51,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default User;

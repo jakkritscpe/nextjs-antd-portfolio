@@ -6,26 +6,14 @@ import {
   UserOutlined,
   AuditOutlined,
 } from "@ant-design/icons";
-import style from "../components/styles/dashboard.module.css";
-import {
-  Layout,
-  Menu,
-  theme,
-  Avatar,
-  Switch,
-  ConfigProvider,
-  Col,
-  Row,
-  Space,
-  Grid,
-} from "antd";
-import Profile from "./profile/Profile";
-import Tools from "./tools/Tools";
+import style from "./styles/dashboard.module.css";
+import { Layout, Menu, theme, Avatar, ConfigProvider, Grid , Switch } from "antd";
+import Link from "next/link";
 
 const { Header, Sider, Content } = Layout;
 const { useBreakpoint } = Grid;
 
-const Dashboard: React.FC = () => {
+const MainLayout = ({ children }: any) => {
   const screens = useBreakpoint();
   const [collapsed, setCollapsed] = useState(true);
   const [sizeAvatar, setSizeAvatar] = useState(40);
@@ -87,17 +75,23 @@ const Dashboard: React.FC = () => {
                 {
                   key: "1",
                   icon: <UserOutlined />,
-                  label: "Profile",
+                  label: <Link href="http://localhost:3000">Profile</Link>,
                 },
                 {
                   key: "2",
                   icon: <AuditOutlined />,
-                  label: "Certificate",
+                  label: (
+                    <Link href="http://localhost:3000/certificate">
+                      Certificate
+                    </Link>
+                  ),
                 },
                 {
                   key: "3",
                   icon: <SettingOutlined />,
-                  label: "Setting",
+                  label: (
+                    <Link href="http://localhost:3000/setting">Setting</Link>
+                  ),
                 },
               ]}
             />
@@ -137,12 +131,12 @@ const Dashboard: React.FC = () => {
                   },
                 }}
               >
-                {/* <Switch
+                <Switch
                   className={style.autoleft}
                   defaultChecked={checkSwith}
                   onChange={onChangeSwith}
                   
-                /> */}
+                />
               </ConfigProvider>
             </div>
           </Header>
@@ -153,17 +147,7 @@ const Dashboard: React.FC = () => {
               minHeight: "90vh",
             }}
           >
-            <Row gutter={[16, 16]}>
-              <Col xl={6} md={12} sm={24} xs={24}>
-                <Profile />
-              </Col>
-              <Col xl={9} md={12} sm={24} xs={24}>
-                <Tools />
-              </Col>
-              <Col xl={8} md={12} sm={24} xs={24}>
-
-              </Col>
-            </Row>
+            {children}
           </Content>
         </Layout>
       </Layout>
@@ -171,4 +155,4 @@ const Dashboard: React.FC = () => {
   );
 };
 
-export default Dashboard;
+export default MainLayout;
